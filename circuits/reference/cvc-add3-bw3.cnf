@@ -1,0 +1,125 @@
+c Add3Optimal
+c 8  : res0
+c 23  : res1
+c 41  : res2
+c i 2  3  5  8  9  10  12  23  24  25  27  41  0
+c 1  : FALSE
+c 2  : a1_67
+c 3  : a2_68
+c 4  : a1_67 XOR a2_68
+c 5  : a3_69
+c 6  : (a1_67 XOR a2_68) XOR a3_69
+c 7  : ((a1_67 XOR a2_68) XOR a3_69) XOR FALSE
+c 8  : (((a1_67 XOR a2_68) XOR a3_69) XOR FALSE) XOR FALSE
+c 9  : a1_70
+c 10  : a2_71
+c 11  : a1_70 XOR a2_71
+c 12  : a3_72
+c 13  : (a1_70 XOR a2_71) XOR a3_72
+c 14  : a1_67 AND a2_68
+c 15  : (a1_67 XOR a2_68) AND a3_69
+c 16  : (a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)
+c 17  : ((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE
+c 18  : ((a1_67 XOR a2_68) XOR a3_69) AND FALSE
+c 19  : (((a1_67 XOR a2_68) XOR a3_69) XOR FALSE) AND FALSE
+c 20  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN (_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)
+c 21  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE))
+c 22  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN ((a1_70 XOR a2_71) XOR a3_72) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)))
+c 23  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN (((a1_70 XOR a2_71) XOR a3_72) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)))) XOR FALSE
+c 24  : a1_73
+c 25  : a2_74
+c 26  : a1_73 XOR a2_74
+c 27  : a3_75
+c 28  : (a1_73 XOR a2_74) XOR a3_75
+c 29  : a1_70 AND a2_71
+c 30  : (a1_70 XOR a2_71) AND a3_72
+c 31  : (a1_70 AND a2_71) OR ((a1_70 XOR a2_71) AND a3_72)
+c 32  : ((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) AND FALSE
+c 33  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) AND ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE))
+c 34  : LET _let_0 = (a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69), _let_1 = (a1_67 XOR a2_68) XOR a3_69 IN (_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND ((_let_1 AND FALSE) OR ((_let_1 XOR FALSE) AND FALSE)))
+c 35  : LET _let_0 = (a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69), _let_1 = (a1_67 XOR a2_68) XOR a3_69 IN ((a1_70 AND a2_71) OR ((a1_70 XOR a2_71) AND a3_72)) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND ((_let_1 AND FALSE) OR ((_let_1 XOR FALSE) AND FALSE))))
+c 36  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN ((a1_70 XOR a2_71) XOR a3_72) AND ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)))
+c 37  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69 IN (((a1_70 XOR a2_71) XOR a3_72) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)))) AND FALSE
+c 38  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69, _let_1 = (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)), _let_2 = (a1_70 XOR a2_71) XOR a3_72 IN (_let_2 AND _let_1) OR ((_let_2 XOR _let_1) AND FALSE)
+c 39  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69, _let_1 = (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)), _let_2 = (a1_70 XOR a2_71) XOR a3_72 IN (((a1_70 AND a2_71) OR ((a1_70 XOR a2_71) AND a3_72)) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) AND FALSE) OR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) AND ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE))))) XOR ((_let_2 AND _let_1) OR ((_let_2 XOR _let_1) AND FALSE))
+c 40  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69, _let_1 = (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)), _let_2 = (a1_70 XOR a2_71) XOR a3_72 IN ((a1_73 XOR a2_74) XOR a3_75) XOR ((((a1_70 AND a2_71) OR ((a1_70 XOR a2_71) AND a3_72)) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) AND FALSE) OR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) AND ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE))))) XOR ((_let_2 AND _let_1) OR ((_let_2 XOR _let_1) AND FALSE)))
+c 41  : LET _let_0 = (a1_67 XOR a2_68) XOR a3_69, _let_1 = (((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) XOR ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE)), _let_2 = (a1_70 XOR a2_71) XOR a3_72 IN (((a1_73 XOR a2_74) XOR a3_75) XOR ((((a1_70 AND a2_71) OR ((a1_70 XOR a2_71) AND a3_72)) XOR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) AND FALSE) OR ((((a1_67 AND a2_68) OR ((a1_67 XOR a2_68) AND a3_69)) XOR FALSE) AND ((_let_0 AND FALSE) OR ((_let_0 XOR FALSE) AND FALSE))))) XOR ((_let_2 AND _let_1) OR ((_let_2 XOR _let_1) AND FALSE)))) XOR FALSE
+p cnf 41 78
+2  3  -4  0
+-2  -3  -4  0
+2  -3  4  0
+-2  3  4  0
+4  5  -6  0
+-4  -5  -6  0
+4  -5  6  0
+-4  5  6  0
+6  -7  0
+-6  7  0
+7  -8  0
+-7  8  0
+9  10  -11  0
+-9  -10  -11  0
+9  -10  11  0
+-9  10  11  0
+11  12  -13  0
+-11  -12  -13  0
+11  -12  13  0
+-11  12  13  0
+2  -14  0
+3  -14  0
+-2  -3  14  0
+4  -15  0
+5  -15  0
+-4  -5  15  0
+-14  16  0
+-15  16  0
+14  15  -16  0
+16  -17  0
+-16  17  0
+6  -18  0
+7  -19  0
+17  -21  0
+-17  21  0
+13  21  -22  0
+-13  -21  -22  0
+13  -21  22  0
+-13  21  22  0
+22  -23  0
+-22  23  0
+24  25  -26  0
+-24  -25  -26  0
+24  -25  26  0
+-24  25  26  0
+26  27  -28  0
+-26  -27  -28  0
+26  -27  28  0
+-26  27  28  0
+9  -29  0
+10  -29  0
+-9  -10  29  0
+11  -30  0
+12  -30  0
+-11  -12  30  0
+-29  31  0
+-30  31  0
+29  30  -31  0
+16  -32  0
+17  -33  0
+31  -35  0
+-31  35  0
+13  -36  0
+21  -36  0
+-13  -21  36  0
+22  -37  0
+-36  38  0
+36  -38  0
+35  38  -39  0
+-35  -38  -39  0
+35  -38  39  0
+-35  38  39  0
+28  39  -40  0
+-28  -39  -40  0
+28  -39  40  0
+-28  39  40  0
+40  -41  0
+-40  41  0

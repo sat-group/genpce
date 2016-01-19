@@ -1,0 +1,7 @@
+c :: WCTIME=10801.5
+c :: command line :: ./optimal-finder cvc-add15to4.cnf -minimal
+c :: version :: 160
+c :: reference filename :: cvc-add15to4.cnf
+c :: reference encoding :: 253
+c i 2 3 5 7 8 10 14 15 17 21 22 24 28 29 31 34 69 89 108 0
+c :: inputs :: 2 3 5 7 8 10 14 15 17 21 22 24 28 29 31 34 69 89 108 

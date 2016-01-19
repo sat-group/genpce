@@ -1,0 +1,45 @@
+c :: WCTIME=10.051
+c :: command line :: ./optimal-finder cvc-plus_3.cnf -greedy
+c :: version :: 160
+c :: reference filename :: cvc-plus_3.cnf
+c :: reference encoding :: 39
+c i 2 6 12 3 7 13 5 11 19 0
+c :: reference encoding :: variables :: 18 :: clauses :: 39
+c Iteration: 1	 MinCls: 96
+c Iteration: 2	 MinCls: 38
+c Iteration: 3	 MinCls: 29
+c Iteration: 4	 MinCls: 29
+c i 2 6 12 3 7 13 5 11 19 17 9 0
+c aux 17 9
+c :: optimal encoding :: variables :: 11 :: clauses :: 29
+c :: optimal minimal encoding :: 29
+p cnf 19 29
+-5 -9 0
+2 -9 0
+3 -9 0
+-2 9 -3 0
+-2 9 5 0
+5 9 -3 0
+17 -9 -6 0
+17 -6 -7 0
+17 11 -6 0
+-11 9 -17 0
+6 9 -17 0
+7 9 -17 0
+17 11 -7 0
+17 11 -9 0
+17 -7 -9 0
+7 6 -17 0
+7 -11 -17 0
+6 -11 -17 0
+2 -5 3 0
+-19 12 17 13 0
+-19 17 -13 -12 0
+-19 13 -17 -12 0
+-19 12 -13 -17 0
+12 17 -13 19 0
+-11 7 6 9 0
+12 13 -17 19 0
+17 13 -12 19 0
+19 -13 -17 -12 0
+-9 11 -6 -7 0

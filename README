@@ -1,0 +1,53 @@
+Tool options:
+-mus, -no-mus                           (EXPERIMENTAL, default: off)
+-minimal, -no-minimal                   (default: off)
+-optimal, -no-optimal                   (default: off)
+-optimal-naive, -no-optimal-naive       (default: off)
+-print, -no-print                       (default: off)
+
+- How to find an optimal encoding given a reference encoding?
+./genpce <reference-encoding> [options]
+
+- How to strengthen an encoding given a reference encoding?
+./genpce <reference-encoding> <strengthen-encoding> [options]
+
+- How to find if a given encoding is optimal or not?
+./genpce <reference-encoding> <reference-encoding> -optimal
+
+You can also check if an encoding is optimal using a more naive approach with 
+duplicate assignments (sanity check):
+./genpce <reference-encoding> <reference-encoding> -optimal-naive
+
+- How to minimize an optimal encoding while preserving the optimality?
+./genpce <reference-encoding> -minimal
+./genpce <reference-encoding> <strengthen-encoding> -minimal
+
+- How to minimize the learned clauses learned for the optimal encoding?
+./genpce <reference-encoding> -mus
+./genpce <reference-encoding> <strengthen-encoding> -mus
+
+For the tested examples, it does not seem to minimize the learned clauses.
+This options should be further tested.
+
+Notes:
+Multiple options can be used, e.g. -mus -minimal.
+The option -print can be used to see the partial assignments that are being 
+considered.
+
+The CNF file of the encoding may contain information regarding the 
+inputs/outputs. This restricts the search to only those variables. If no 
+information is given, then the optimal encoding will consider all variables.
+
+Example of subset of variables to do optimal propagation in a CNF file:
+
+c ITE 1 ? 2 : 3 = 4
+c i 1 2 3 4 0
+p cnf 4 4
+-1 -2 4 0
+-1 2 -4 0
+1 -3 4 0
+1 3 -4 0
+
+Note: You can have multiple input lines.
+An input line is defined as 'c i <list of inputs> 0'.
+For more examples check the encodings/ directory.

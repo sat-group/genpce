@@ -1,0 +1,73 @@
+c Add3DoubleCarryGadget
+c 9  : sum
+c 18  : carry_out0
+c 21  : carry_out1
+c i 2  3  5  7  13  9  18  21 0
+c 1  : FALSE
+c 2  : x1_62
+c 3  : x2_63
+c 4  : x1_62 XOR x2_63
+c 5  : x3_64
+c 6  : (x1_62 XOR x2_63) XOR x3_64
+c 7  : carry0_65
+c 8  : ((x1_62 XOR x2_63) XOR x3_64) XOR carry0_65
+c 9  : (((x1_62 XOR x2_63) XOR x3_64) XOR carry0_65) XOR FALSE
+c 10  : x1_62 AND x2_63
+c 11  : (x1_62 XOR x2_63) AND x3_64
+c 12  : (x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64)
+c 13  : carry1_66
+c 14  : ((x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64)) XOR carry1_66
+c 15  : ((x1_62 XOR x2_63) XOR x3_64) AND carry0_65
+c 16  : (((x1_62 XOR x2_63) XOR x3_64) XOR carry0_65) AND FALSE
+c 17  : LET _let_0 = (x1_62 XOR x2_63) XOR x3_64 IN (_let_0 AND carry0_65) OR ((_let_0 XOR carry0_65) AND FALSE)
+c 18  : LET _let_0 = (x1_62 XOR x2_63) XOR x3_64 IN (((x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64)) XOR carry1_66) XOR ((_let_0 AND carry0_65) OR ((_let_0 XOR carry0_65) AND FALSE))
+c 19  : ((x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64)) AND carry1_66
+c 20  : LET _let_0 = (x1_62 XOR x2_63) XOR x3_64 IN (((x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64)) XOR carry1_66) AND ((_let_0 AND carry0_65) OR ((_let_0 XOR carry0_65) AND FALSE))
+c 21  : LET _let_0 = (x1_62 AND x2_63) OR ((x1_62 XOR x2_63) AND x3_64), _let_1 = (x1_62 XOR x2_63) XOR x3_64 IN (_let_0 AND carry1_66) OR ((_let_0 XOR carry1_66) AND ((_let_1 AND carry0_65) OR ((_let_1 XOR carry0_65) AND FALSE)))
+p cnf 21 46
+2  3  -4  0
+-2  -3  -4  0
+2  -3  4  0
+-2  3  4  0
+4  5  -6  0
+-4  -5  -6  0
+4  -5  6  0
+-4  5  6  0
+6  7  -8  0
+-6  -7  -8  0
+6  -7  8  0
+-6  7  8  0
+8  -9  0
+-8  9  0
+2  -10  0
+3  -10  0
+-2  -3  10  0
+4  -11  0
+5  -11  0
+-4  -5  11  0
+-10  12  0
+-11  12  0
+10  11  -12  0
+12  13  -14  0
+-12  -13  -14  0
+12  -13  14  0
+-12  13  14  0
+6  -15  0
+7  -15  0
+-6  -7  15  0
+8  -16  0
+-15  17  0
+15  -17  0
+14  17  -18  0
+-14  -17  -18  0
+14  -17  18  0
+-14  17  18  0
+12  -19  0
+13  -19  0
+-12  -13  19  0
+14  -20  0
+17  -20  0
+-14  -17  20  0
+-19  21  0
+-20  21  0
+19  20  -21  0

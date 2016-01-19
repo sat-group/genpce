@@ -1,0 +1,19 @@
+c :: WCTIME=0.00747204
+c :: command line :: ./optimal-finder cvc-slt-gadget.cnf -minimal
+c :: version :: 160
+c :: reference filename :: cvc-slt-gadget.cnf
+c :: reference encoding :: 6
+c i 4 2 5 3 0
+c :: inputs :: 4 2 5 3 
+c :: clause minimization :: 0
+c :: assignments analyzed :: 72
+c :: reference encoding :: variables :: 4 :: clauses :: 6
+c :: optimal encoding :: variables :: 4 :: clauses :: 6
+c :: optimal minimal encoding :: 6
+p cnf 5 6
+-4 3 2 0
+-4 3 -5 0
+5 -2 -3 0
+5 -3 4 0
+3 -5 2 0
+4 -2 -3 0

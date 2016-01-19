@@ -1,0 +1,25 @@
+c :: WCTIME=0.0249959
+c :: command line :: ./optimal-finder cvc-mult-const_const3_2n_2.cnf -greedy
+c :: version :: 160
+c :: reference filename :: cvc-mult-const_const3_2n_2.cnf
+c :: reference encoding :: 41
+c i 3 6 11 18 2 4 0
+c :: reference encoding :: variables :: 17 :: clauses :: 45
+c Iteration: 1	 MinCls: 11
+c Iteration: 2	 MinCls: 11
+c i 3 6 11 18 2 4 0
+c aux
+c :: optimal encoding :: variables :: 6 :: clauses :: 20
+c :: optimal minimal encoding :: 11
+p cnf 18 11
+-11 -3 0
+-3 2 0
+-6 -18 0
+2 -18 0
+-18 4 0
+4 -11 0
+3 -2 0
+6 -11 0
+6 4 -3 0
+2 -6 11 0
+18 -4 11 0

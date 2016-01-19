@@ -1,0 +1,104 @@
+c cvc-ult_6
+c i 18  15  12  9  6  3  19  16  13  10  7  4  2  0
+c 2  : BVLT(a_1, b_2)
+c 3  : (a_1)[5]
+c 4  : (b_2)[5]
+c 5  : (a_1)[5] <=> (b_2)[5]
+c 6  : (a_1)[4]
+c 7  : (b_2)[4]
+c 8  : (a_1)[4] <=> (b_2)[4]
+c 9  : (a_1)[3]
+c 10  : (b_2)[3]
+c 11  : (a_1)[3] <=> (b_2)[3]
+c 12  : (a_1)[2]
+c 13  : (b_2)[2]
+c 14  : (a_1)[2] <=> (b_2)[2]
+c 15  : (a_1)[1]
+c 16  : (b_2)[1]
+c 17  : (a_1)[1] <=> (b_2)[1]
+c 18  : (a_1)[0]
+c 19  : (b_2)[0]
+c 20  : ((a_1)[1] <=> (b_2)[1]) AND NOT((a_1)[0]) AND (b_2)[0]
+c 21  : NOT((a_1)[1]) AND (b_2)[1]
+c 22  : LET _let_0 = (a_1)[1], _let_1 = (b_2)[1] IN ((_let_0 <=> _let_1) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_1)
+c 23  : LET _let_0 = (a_1)[1], _let_1 = (b_2)[1] IN ((a_1)[2] <=> (b_2)[2]) AND (((_let_0 <=> _let_1) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_1))
+c 24  : NOT((a_1)[2]) AND (b_2)[2]
+c 25  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (b_2)[1], _let_3 = (b_2)[2] IN ((_let_1 <=> _let_3) AND (((_let_0 <=> _let_2) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_2))) OR (NOT(_let_1) AND _let_3)
+c 26  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (b_2)[1], _let_3 = (b_2)[2] IN ((a_1)[3] <=> (b_2)[3]) AND (((_let_1 <=> _let_3) AND (((_let_0 <=> _let_2) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_2))) OR (NOT(_let_1) AND _let_3))
+c 27  : NOT((a_1)[3]) AND (b_2)[3]
+c 28  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (a_1)[3], _let_3 = (b_2)[1], _let_4 = (b_2)[2], _let_5 = (b_2)[3] IN ((_let_2 <=> _let_5) AND (((_let_1 <=> _let_4) AND (((_let_0 <=> _let_3) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_3))) OR (NOT(_let_1) AND _let_4))) OR (NOT(_let_2) AND _let_5)
+c 29  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (a_1)[3], _let_3 = (b_2)[1], _let_4 = (b_2)[2], _let_5 = (b_2)[3] IN ((a_1)[4] <=> (b_2)[4]) AND (((_let_2 <=> _let_5) AND (((_let_1 <=> _let_4) AND (((_let_0 <=> _let_3) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_3))) OR (NOT(_let_1) AND _let_4))) OR (NOT(_let_2) AND _let_5))
+c 30  : NOT((a_1)[4]) AND (b_2)[4]
+c 31  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (a_1)[3], _let_3 = (a_1)[4], _let_4 = (b_2)[1], _let_5 = (b_2)[2], _let_6 = (b_2)[3], _let_7 = (b_2)[4] IN ((_let_3 <=> _let_7) AND (((_let_2 <=> _let_6) AND (((_let_1 <=> _let_5) AND (((_let_0 <=> _let_4) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_4))) OR (NOT(_let_1) AND _let_5))) OR (NOT(_let_2) AND _let_6))) OR (NOT(_let_3) AND _let_7)
+c 32  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (a_1)[3], _let_3 = (a_1)[4], _let_4 = (b_2)[1], _let_5 = (b_2)[2], _let_6 = (b_2)[3], _let_7 = (b_2)[4] IN ((a_1)[5] <=> (b_2)[5]) AND (((_let_3 <=> _let_7) AND (((_let_2 <=> _let_6) AND (((_let_1 <=> _let_5) AND (((_let_0 <=> _let_4) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_4))) OR (NOT(_let_1) AND _let_5))) OR (NOT(_let_2) AND _let_6))) OR (NOT(_let_3) AND _let_7))
+c 33  : NOT((a_1)[5]) AND (b_2)[5]
+c 34  : LET _let_0 = (a_1)[1], _let_1 = (a_1)[2], _let_2 = (a_1)[3], _let_3 = (a_1)[4], _let_4 = (a_1)[5], _let_5 = (b_2)[1], _let_6 = (b_2)[2], _let_7 = (b_2)[3], _let_8 = (b_2)[4], _let_9 = (b_2)[5] IN ((_let_4 <=> _let_9) AND (((_let_3 <=> _let_8) AND (((_let_2 <=> _let_7) AND (((_let_1 <=> _let_6) AND (((_let_0 <=> _let_5) AND NOT((a_1)[0]) AND (b_2)[0]) OR (NOT(_let_0) AND _let_5))) OR (NOT(_let_1) AND _let_6))) OR (NOT(_let_2) AND _let_7))) OR (NOT(_let_3) AND _let_8))) OR (NOT(_let_4) AND _let_9)
+p cnf 33 68
+-3  4  -5  0
+3  -4  -5  0
+-3  -4  5  0
+3  4  5  0
+-6  7  -8  0
+6  -7  -8  0
+-6  -7  8  0
+6  7  8  0
+-9  10  -11  0
+9  -10  -11  0
+-9  -10  11  0
+9  10  11  0
+-12  13  -14  0
+12  -13  -14  0
+-12  -13  14  0
+12  13  14  0
+-15  16  -17  0
+15  -16  -17  0
+-15  -16  17  0
+15  16  17  0
+17  -20  0
+-18  -20  0
+19  -20  0
+-17  18  -19  20  0
+-15  -21  0
+16  -21  0
+15  -16  21  0
+-20  22  0
+-21  22  0
+20  21  -22  0
+14  -23  0
+22  -23  0
+-14  -22  23  0
+-12  -24  0
+13  -24  0
+12  -13  24  0
+-23  25  0
+-24  25  0
+23  24  -25  0
+11  -26  0
+25  -26  0
+-11  -25  26  0
+-9  -27  0
+10  -27  0
+9  -10  27  0
+-26  28  0
+-27  28  0
+26  27  -28  0
+8  -29  0
+28  -29  0
+-8  -28  29  0
+-6  -30  0
+7  -30  0
+6  -7  30  0
+-29  31  0
+-30  31  0
+29  30  -31  0
+5  -32  0
+31  -32  0
+-5  -31  32  0
+-3  -33  0
+4  -33  0
+3  -4  33  0
+-32  34  0
+-33  34  0
+32  33  -34  0
+-2  34  0
+2  -34  0

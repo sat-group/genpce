@@ -1,0 +1,101 @@
+c Add7To3
+c 14  : res0
+c 25  : res1
+c 28  : res2
+c i 3  4  6  9  10  12  2  14  25  28  0
+c 2  : a_97
+c 3  : a_91
+c 4  : a_92
+c 5  : a_91 XOR a_92
+c 6  : a_93
+c 7  : (a_91 XOR a_92) XOR a_93
+c 8  : a_97 XOR ((a_91 XOR a_92) XOR a_93)
+c 9  : a_94
+c 10  : a_95
+c 11  : a_94 XOR a_95
+c 12  : a_96
+c 13  : (a_94 XOR a_95) XOR a_96
+c 14  : (a_97 XOR ((a_91 XOR a_92) XOR a_93)) XOR ((a_94 XOR a_95) XOR a_96)
+c 15  : a_91 AND a_92
+c 16  : (a_91 XOR a_92) AND a_93
+c 17  : (a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93)
+c 18  : a_94 AND a_95
+c 19  : (a_94 XOR a_95) AND a_96
+c 20  : (a_94 AND a_95) OR ((a_94 XOR a_95) AND a_96)
+c 21  : ((a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93)) XOR ((a_94 AND a_95) OR ((a_94 XOR a_95) AND a_96))
+c 22  : a_97 AND ((a_91 XOR a_92) XOR a_93)
+c 23  : (a_97 XOR ((a_91 XOR a_92) XOR a_93)) AND ((a_94 XOR a_95) XOR a_96)
+c 24  : LET _let_0 = (a_91 XOR a_92) XOR a_93 IN (a_97 AND _let_0) OR ((a_97 XOR _let_0) AND ((a_94 XOR a_95) XOR a_96))
+c 25  : LET _let_0 = (a_91 XOR a_92) XOR a_93, _let_1 = a_94 XOR a_95 IN (((a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93)) XOR ((a_94 AND a_95) OR (_let_1 AND a_96))) XOR ((a_97 AND _let_0) OR ((a_97 XOR _let_0) AND (_let_1 XOR a_96)))
+c 26  : ((a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93)) AND ((a_94 AND a_95) OR ((a_94 XOR a_95) AND a_96))
+c 27  : LET _let_0 = (a_91 XOR a_92) XOR a_93, _let_1 = a_94 XOR a_95 IN (((a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93)) XOR ((a_94 AND a_95) OR (_let_1 AND a_96))) AND ((a_97 AND _let_0) OR ((a_97 XOR _let_0) AND (_let_1 XOR a_96)))
+c 28  : LET _let_0 = (a_91 AND a_92) OR ((a_91 XOR a_92) AND a_93), _let_1 = (a_91 XOR a_92) XOR a_93, _let_2 = a_94 XOR a_95, _let_3 = (a_94 AND a_95) OR (_let_2 AND a_96) IN (_let_0 AND _let_3) OR ((_let_0 XOR _let_3) AND ((a_97 AND _let_1) OR ((a_97 XOR _let_1) AND (_let_2 XOR a_96))))
+p cnf 27 68
+3  4  -5  0
+-3  -4  -5  0
+3  -4  5  0
+-3  4  5  0
+5  6  -7  0
+-5  -6  -7  0
+5  -6  7  0
+-5  6  7  0
+2  7  -8  0
+-2  -7  -8  0
+2  -7  8  0
+-2  7  8  0
+9  10  -11  0
+-9  -10  -11  0
+9  -10  11  0
+-9  10  11  0
+11  12  -13  0
+-11  -12  -13  0
+11  -12  13  0
+-11  12  13  0
+8  13  -14  0
+-8  -13  -14  0
+8  -13  14  0
+-8  13  14  0
+3  -15  0
+4  -15  0
+-3  -4  15  0
+5  -16  0
+6  -16  0
+-5  -6  16  0
+-15  17  0
+-16  17  0
+15  16  -17  0
+9  -18  0
+10  -18  0
+-9  -10  18  0
+11  -19  0
+12  -19  0
+-11  -12  19  0
+-18  20  0
+-19  20  0
+18  19  -20  0
+17  20  -21  0
+-17  -20  -21  0
+17  -20  21  0
+-17  20  21  0
+2  -22  0
+7  -22  0
+-2  -7  22  0
+8  -23  0
+13  -23  0
+-8  -13  23  0
+-22  24  0
+-23  24  0
+22  23  -24  0
+21  24  -25  0
+-21  -24  -25  0
+21  -24  25  0
+-21  24  25  0
+17  -26  0
+20  -26  0
+-17  -20  26  0
+21  -27  0
+24  -27  0
+-21  -24  27  0
+-26  28  0
+-27  28  0
+26  27  -28  0

@@ -1,0 +1,15 @@
+c SignedGadget
+c i 4  2  5  3 0 
+c 3  : aSLTb
+c 5  : aLTb
+c 2  : b_28
+c 3  : aSLTb_30
+c 4  : a_27
+c 5  : aLTb_29
+p cnf 4 6
+2  3  -4  0
+2  3  -5  0
+-3  4  5  0
+-2  -3  4  0
+-2  -3  5  0
+3  -4  -5  0
